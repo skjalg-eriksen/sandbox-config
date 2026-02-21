@@ -14,6 +14,8 @@
     {
       devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [
+          direnv
+          nix-direnv
           nodejs_22
           zig
           rustc
@@ -44,6 +46,9 @@
           if command -v zoxide >/dev/null; then
           eval "$(zoxide init bash)"
           fi
+
+          # direnv
+          eval "$(direnv hook bash)"
         '';
       };
     };
