@@ -9,7 +9,7 @@ export SANDBOX_CONTAINER_NAME="sandbox-dev"
 export SANDBOX_IMAGE="docker.io/library/archlinux:latest"
 
 # Container user
-export SANDBOX_USER="dev"
+export SANDBOX_USER="hugin"
 export SANDBOX_HOME="/home/$SANDBOX_USER"
 export SANDBOX_UID=1000
 
