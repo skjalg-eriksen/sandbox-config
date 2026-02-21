@@ -1,0 +1,7 @@
+# Ignore runtime directories
+workspace/*
+cache/*
+
+# Keep directory structure
+!workspace/.gitkeep
+!cache/.gitkeep
