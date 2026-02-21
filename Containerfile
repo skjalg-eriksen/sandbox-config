@@ -20,7 +20,9 @@ RUN pacman -S --noconfirm \
     python-pip \
     less \
     which \
-    unzip
+    unzip \
+    openssh \
+    gnupg
 
 # Create dev user
 ARG USERNAME=dev

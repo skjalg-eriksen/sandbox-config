@@ -19,14 +19,14 @@ if ! podman container exists "$SANDBOX_NAME"; then
     podman create \
         -it \
         --name "$SANDBOX_NAME" \
+        --userns=keep-id \
         --network slirp4netns:allow_host_loopback=true \
         --cap-drop=all \
         --security-opt=no-new-privileges \
         -v "$SANDBOX_WORKSPACE:$CONTAINER_WORKSPACE" \
         -v "$SANDBOX_CACHE:$CONTAINER_CACHE" \
-        -v "$SSH_AUTH_SOCK:/ssh-agent" \
-        -e SSH_AUTH_SOCK=/ssh-agent \
-        -v "$HOME/.ssh:/home/$(whoami)/.ssh:ro" \
+        -v "$SSH_AUTH_SOCK:$SSH_AUTH_SOCK" \
+        -e SSH_AUTH_SOCK="$SSH_AUTH_SOCK" \
         "$SANDBOX_IMAGE"
 fi
 
