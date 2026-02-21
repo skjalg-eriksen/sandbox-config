@@ -22,7 +22,18 @@ RUN pacman -S --noconfirm \
     which \
     unzip \
     openssh \
-    gnupg
+    gnupg \
+    nix
+
+RUN mkdir -p /etc/nix && \
+    printf "%s\n" \
+      "experimental-features = nix-command flakes" \
+      "sandbox = false" \
+      > /etc/nix/nix.conf
+
+# Add container utility scripts
+COPY scripts/container-utilities/ /usr/local/bin/
+RUN chmod +x /usr/local/bin/*
 
 # Create dev user
 ARG USERNAME=dev
