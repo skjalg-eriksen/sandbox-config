@@ -7,6 +7,7 @@
 # Container identity
 export SANDBOX_CONTAINER_NAME="sandbox-dev"
 export SANDBOX_IMAGE="docker.io/library/archlinux:latest"
+export SANDBOX_USERNS="private"
 
 # Container user
 export SANDBOX_USER="hugin"

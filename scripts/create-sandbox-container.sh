@@ -21,7 +21,7 @@ echo "[*] Creating container..."
 
 podman create \
   --name "$SANDBOX_CONTAINER_NAME" \
-  --userns=keep-id \
+  --userns="$SANDBOX_USERNS" \
   --network="$SANDBOX_NETWORK" \
   --add-host="$SANDBOX_HOST_ALIAS" \
   --cap-drop=all \
