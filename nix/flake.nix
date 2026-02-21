@@ -14,6 +14,9 @@
     {
       devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [
+          pkgs.nim2
+          pkgs.nimble
+          pkgs.gcc
           direnv
           nix-direnv
           nodejs_22
