@@ -31,10 +31,6 @@ RUN mkdir -p /etc/nix && \
       "sandbox = false" \
       > /etc/nix/nix.conf
 
-# Add container utility scripts
-COPY scripts/container-utilities/ /usr/local/bin/
-RUN chmod +x /usr/local/bin/*
-
 # Create dev user
 ARG USERNAME=dev
 ARG UID=1000
