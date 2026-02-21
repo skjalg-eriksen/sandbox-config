@@ -36,8 +36,6 @@ if ! podman container exists "$SANDBOX_NAME"; then
         -v "$SANDBOX_NIX_CONFIG:$CONTAINER_NIX_CONFIG" \
         -v "$SANDBOX_WORKSPACE:$CONTAINER_WORKSPACE" \
         -v "$SANDBOX_CACHE:$CONTAINER_CACHE" \
-        -v "$SSH_AUTH_SOCK:$SSH_AUTH_SOCK" \
-        -e SSH_AUTH_SOCK="$SSH_AUTH_SOCK" \
         "$SANDBOX_IMAGE"
 fi
 
